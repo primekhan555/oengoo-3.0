@@ -1,8 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/config/image_paths.dart';
+import 'package:oengoo/profileInfo/getstarted.dart';
 import 'package:oengoo/profileInfo/profilepicUploaded.dart';
+import 'package:oengoo/view/widgets/bottom_sheet_camera.dart';
+import 'package:oengoo/view/widgets/button_circle.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
 
 class ProfilePicture extends StatefulWidget {
   const ProfilePicture({Key? key}) : super(key: key);
@@ -12,163 +18,74 @@ class ProfilePicture extends StatefulWidget {
 }
 
 class _ProfilePictureState extends State<ProfilePicture> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Builder(
-          builder: (context) => SafeArea(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30),
-              child: Container(
-                height: 50.h,
-                width: 50.w,
-                child: Image.asset(
-                  "assets/images/backbutton.png",
-                  height: 25.h,
-                ),
-              ),
+      key: _scaffoldKey,
+      resizeToAvoidBottomInset: false,
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        SizedBox(height: 80.h),
+        Padding(
+          padding: EdgeInsets.only(left: 34.w),
+          child: circleButton(onPress: () {}, iconData: Icons.arrow_back_ios, state: 1),
+        ),
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.only(left: 45.w, right: 45.w),
+            alignment: Alignment.center,
+            child: customText(
+              text: 'Upload Profile Picture',
+              fontSize: 35.sp,
+              textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Center(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Text(
-                "Upload Profile Picture",
-                style: textStyle("nunito", 24.sp, AppColor.blackColor),
-              ),
-              SizedBox(
-                height: 80.h,
-              ),
-              Container(
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 170.h,
-                      width: 170.w,
-                      decoration: BoxDecoration(shape: BoxShape.circle),
-                      child: Image.asset("assets/images/dummyprofile.png"),
-                    ),
-                    Positioned(
-                      top: 140,
-                      left: 140,
-                      child: InkWell(
-                        onTap: () {
-                          Scaffold.of(context).showBottomSheet((context) {
-                            return Container(
-                              height: 200.h,
-                              width: double.infinity,
-                              decoration: BoxDecoration(gradient: AppColor.appThemeColor),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 3, right: 25),
-                                        child: InkWell(
-                                          onTap: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: Container(
-                                            child: Image.asset(
-                                              "assets/images/cross.png",
-                                              height: 40.h,
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          child: Image.asset(
-                                            "assets/images/uploadcampic.png",
-                                            height: 40.h,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-                                        Text(
-                                          "Take New Profile Picture",
-                                          style: textStyle("nunito", 17.sp, AppColor.blackColor),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          child: Image.asset(
-                                            "assets/images/gallery.png",
-                                            height: 40.h,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-                                        Text(
-                                          "Select Profile Picture",
-                                          style: textStyle("nunito", 17.sp, AppColor.blackColor),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
-                          });
-                        },
-                        child: Container(
-                          child: Image.asset(
-                            "assets/images/camera.png",
-                            height: 45.h,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
+            alignment: Alignment.topCenter,
+            child: Stack(
+              alignment: AlignmentDirectional.bottomEnd,
+              children: [
+                SizedBox(
+                  height: 266.h,
+                  width: 266.h,
+                  child: Image.asset(ImagePaths.dummyProfileImage),
                 ),
-              ),
-              SizedBox(
-                height: 120.h,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30, right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => ProfilePicUploaded()));
+                Positioned(
+                  bottom: 40.h,
+                  child: circleButton(
+                      onPress: () {
+                        _scaffoldKey.currentState!
+                            .showBottomSheet((context) => const CameraBottomSheet());
                       },
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/skip.png",
-                          height: 45.h,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ]))
-          ])),
-        ));
+                      state: 2,
+                      color: AppColor.blackOColor,
+                      iconData: CupertinoIcons.camera_fill),
+                )
+              ],
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 34.w, right: 34.w),
+          child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+            customText(
+              text: 'Skip',
+              fontSize: 30.sp,
+              fontColor: AppColor.greenColor,
+            ),
+            SizedBox(width: 10.w),
+            circleButton(
+                onPress: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx) => const GetStarted()));
+                },
+                state: 1),
+          ]),
+        ),
+        SizedBox(height: 34.h),
+      ]),
+    );
   }
 }

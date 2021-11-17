@@ -10,6 +10,7 @@ class AppColor {
   static const Color greenColor = Color(0xff75B67C);
   static const Color lightGreen = Color(0xff75B67C);
   static const Color whiteColor = Colors.white;
+  static const Color blackOColor = Colors.black;
   static Color lightGreyColor = Colors.grey.shade400;
   static const Gradient appThemeColor = LinearGradient(
     begin: Alignment.topCenter,

@@ -9,7 +9,7 @@ Widget customText(
     fontWeight = FontWeight.normal,
     double fontSize = 16.0,
     overflow = TextOverflow.ellipsis,
-    Color fontColor = AppColor.blackColor,
+    Color fontColor = AppColor.blackOColor,
     TextDecoration decoration = TextDecoration.none}) {
   return Text(
     text,

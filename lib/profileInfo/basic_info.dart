@@ -5,7 +5,7 @@ import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/main.dart';
 import 'package:oengoo/profileInfo/gender_selection.dart';
-import 'package:oengoo/view/widgets/custom_button.dart';
+import 'package:oengoo/view/widgets/bottom_custom.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/custom_textfield.dart';
 

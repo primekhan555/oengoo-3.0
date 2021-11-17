@@ -70,7 +70,7 @@ class _SendChallengeState extends State<SendChallenge> {
                       )
                     ],
                   ),
-                  mainContainers("assets/images/steps.png", "Steps", "3890", "per hr"),
+                  routineContainer("assets/images/steps.png", "Steps", "3890", "per hr"),
                 ],
               ),
               SizedBox(

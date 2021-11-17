@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/Home/notification.dart';
 import 'package:oengoo/Home/profile.dart';
+import 'package:oengoo/config/decorations.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
+import 'package:oengoo/view/widgets/text_rich.dart';
 
 import '../config/colors.dart';
 
@@ -104,78 +108,63 @@ Widget appbar(BuildContext context) {
   );
 }
 
-Widget mainContainers(String imageUrl, String text1, String text2, String text3) {
+Widget challengeContainers(
+  String text,
+  String imageUrl, {
+  required String richText1,
+  required String richText2,
+  required String richText3,
+}) {
   return Container(
-    height: 110.h,
-    width: 65.w,
+    height: 199.h,
+    width: 97.w,
     decoration: BoxDecoration(
-        border: Border.all(color: AppColor.greenColor, width: 2.w),
-        borderRadius: BorderRadius.circular(35)),
-    child: Column(
-      children: [
-        Image.asset(
-          imageUrl,
-          height: 45.h,
-        ),
-        Text(text1, style: textStyle("nunito", 12.sp, AppColor.blackColor)),
-        Text(
-          text2,
-          style: textStyle("nunito", 12.sp, AppColor.greenColor),
-        ),
-        Text(text3, style: textStyle("nunito", 8.sp, Colors.grey[300]))
-      ],
+      color: AppColor.whiteColor,
+      border: Border.all(color: AppColor.greenColor, width: 2.w),
+      borderRadius: BorderRadius.circular(30.r),
+      boxShadow: Decorations.shadow,
     ),
-  );
-}
-
-Widget challengContainers(String text1, String text2, String imageurl1, String imageurl2) {
-  return Container(
-    height: 190.h,
-    width: 90.w,
-    decoration: BoxDecoration(
-        border: Border.all(color: AppColor.greenColor, width: 2.w),
-        borderRadius: BorderRadius.circular(28)),
     child: Column(
       children: [
         Container(
-            height: 55.h,
+            height: 59.h,
             width: double.infinity,
+            alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: AppColor.greenColor,
-                borderRadius:
-                    BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  text1,
-                  style: textStyle("nunito", 12.sp, Colors.white),
-                ),
-                Text(text2, style: textStyle("nunito", 12.sp, Colors.white))
-              ],
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r))),
+            child: customText(
+              text: text,
+              fontSize: 16.sp,
+              textAlign: TextAlign.center,
+              fontColor: CupertinoColors.white,
             )),
         SizedBox(
-          height: 3.h,
+          height: 6.h,
         ),
         Container(
-          height: 10.h,
-          width: 80.w,
+          height: 5.h,
+          width: 83.w,
           decoration:
-              BoxDecoration(borderRadius: BorderRadius.circular(5), color: AppColor.greenColor),
+              BoxDecoration(borderRadius: BorderRadius.circular(10.r), color: AppColor.greenColor),
+        ),
+        SizedBox(
+          height: 6.h,
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: 10.w,
+            right: 10.w,
+          ),
+          child: richText(text1: richText1, text2: richText2, text3: richText3),
         ),
         SizedBox(
           height: 3.h,
         ),
         Image.asset(
-          imageurl1,
-          height: 37.h,
-        ),
-        SizedBox(
-          height: 3.h,
-        ),
-        Image.asset(
-          imageurl2,
-          height: 60.h,
+          imageUrl,
+          height: 80.h,
         )
       ],
     ),
@@ -208,6 +197,32 @@ Widget backButton(context, ontap) {
         ),
       ),
       decoration: BoxDecoration(color: AppColor.greenColor, shape: BoxShape.circle),
+    ),
+  );
+}
+
+Widget routineContainer(String imageUrl, String text1, String text2, String text3) {
+  return Container(
+    height: 128.h,
+    width: 71.w,
+    decoration: BoxDecoration(
+      color: AppColor.whiteColor,
+      border: Border.all(color: AppColor.greenColor, width: 2.w),
+      borderRadius: BorderRadius.circular(35),
+      boxShadow: Decorations.shadow,
+    ),
+    child: Column(
+      children: [
+        Image.asset(
+          imageUrl,
+          height: 50.h,
+        ),
+        customText(text: text1, fontSize: 16.sp, fontColor: AppColor.blackOColor),
+        SizedBox(height: 8.h),
+        customText(text: text2, fontSize: 15.sp, fontColor: AppColor.greenColor),
+        SizedBox(height: 8.h),
+        customText(text: text3, fontSize: 10.sp, fontColor: AppColor.lightGreyColor),
+      ],
     ),
   );
 }

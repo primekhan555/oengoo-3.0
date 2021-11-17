@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/curvednavigationbar.dart';
+import 'package:oengoo/view/screens/main/screen_main.dart';
+import 'package:oengoo/config/image_paths.dart';
+import 'package:oengoo/view/widgets/bottom_custom.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -13,45 +16,42 @@ class _GetStartedState extends State<GetStarted> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Center(
+      body: Padding(
+        padding: EdgeInsets.only(left: 60.w, right: 60.w),
         child: Column(
           children: [
-            SizedBox(
-              height: 70.h,
-            ),
-            Container(
-                child: Image.asset(
-              "assets/images/getstartedlogo.png",
-              height: 200.h,
-            )),
-            SizedBox(
-              height: 90.h,
-            ),
-            Container(
-              child: Image.asset(
-                "assets/images/letsbegin.png",
-                height: 100.h,
+            Expanded(
+              flex: 3,
+              child: Container(
+                height: 265.74.h,
+                width: 282.58.w,
+                alignment: Alignment.center,
+                child: Image.asset(ImagePaths.getStartedImage),
               ),
             ),
-            SizedBox(
-              height: 60.h,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BottomNavBar()));
-              },
+            Expanded(
+                child: Container(
+              child: customText(
+                  text: "Let's begin our first step towards fitness!",
+                  fontSize: 35.sp,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold),
+            )),
+            Expanded(
               child: Container(
-                child: Image.asset(
-                  "assets/images/getstarted.png",
-                  height: 40.h,
+                alignment: Alignment.topCenter,
+                child: customButton(
+                  onPress: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (ctx) => const MainScreen()));
+                  },
+                  text: "Get Started",
                 ),
               ),
-            )
+            ),
           ],
         ),
-      )),
+      ),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/profileInfo/profilepic.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/widget_flutter_switch.dart';
@@ -102,7 +103,8 @@ class _UserWeightState extends State<UserWeight> {
               child: Container(
             alignment: Alignment.topCenter,
             child: circleButton(onPress: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserWeight()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const ProfilePicture()));
             }),
           )),
         ]));

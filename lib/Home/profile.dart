@@ -120,19 +120,19 @@ class _UserProfileState extends State<UserProfile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  mainContainers("assets/images/steps.png", "Steps", "3890", "per hr"),
+                  routineContainer("assets/images/steps.png", "Steps", "3890", "per hr"),
                   SizedBox(
                     width: 15.w,
                   ),
-                  mainContainers("assets/images/calories.png", "Calories", "950", "Kcal"),
+                  routineContainer("assets/images/calories.png", "Calories", "950", "Kcal"),
                   SizedBox(
                     width: 15.w,
                   ),
-                  mainContainers("assets/images/sleep.png", "Sleep", "8:30", "Hours"),
+                  routineContainer("assets/images/sleep.png", "Sleep", "8:30", "Hours"),
                   SizedBox(
                     width: 15.w,
                   ),
-                  mainContainers("assets/images/training.png", "Training", "2:00", "Hours")
+                  routineContainer("assets/images/training.png", "Training", "2:00", "Hours")
                 ],
               ),
               SizedBox(

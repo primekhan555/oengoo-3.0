@@ -7,6 +7,8 @@ import 'package:oengoo/logins/splash.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:oengoo/profileInfo/basic_info.dart';
 import 'package:oengoo/profileInfo/gender_selection.dart';
+import 'package:oengoo/profileInfo/profilepic.dart';
+import 'package:oengoo/view/screens/main/screen_main.dart';
 
 double? screenWidth, screenHeight;
 void main() {
@@ -29,8 +31,9 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme: ThemeData(
-                splashColor:
-                    Colors.transparent, //the highlight effect when clicked is set to transparent
+                splashColor: Colors.transparent, //t
+                scaffoldBackgroundColor:
+                    Colors.white, // he highlight effect when clicked is set to transparent
                 highlightColor: Colors.transparent, //the diffusion effect when long
                 primarySwatch: Colors.green,
                 pageTransitionsTheme: const PageTransitionsTheme(builders: {
@@ -42,10 +45,12 @@ class MyApp extends StatelessWidget {
   }
 
   startWidget() {
-    return const WhatsYourGender();
+    return const MainScreen();
+    // return ProfilePicture();
+    // return const WhatsYourGender();
 
-    return const BasicInformation();
+    // return const BasicInformation();
 
-    return const SplashScreen();
+    // return const SplashScreen();
   }
 }
