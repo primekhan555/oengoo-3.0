@@ -3,98 +3,52 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/view/widgets/appbar_custom.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
+import 'package:oengoo/view/widgets/search_textfield.dart';
 
-class Notifications extends StatelessWidget {
+class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          // height: double.infinity,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15.h),
-            child: Column(
+      appBar: const CustomAppBar(
+          onSettingClick: null,
+          onNotificationsClicked: null,
+          state: 2,
+          state2Icon: Icons.notifications),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 34.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 15.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    profileButton(() {}),
-                    notificationIconButton(() {}),
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Text(
-                  "Monday",
-                  style: textStyle("nunito", 12.sp, AppColor.greenColor),
-                ),
-                Text(
-                  "Today",
-                  style: textStyle("nunito", 40.sp, AppColor.blackColor),
-                ),
-                Text(
-                  "November 11,2021",
-                  style: textStyle("nunito", 12.sp, AppColor.blackColor),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                  ),
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  height: 30.h,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: TextField(
-                          style: textStyle("nunito", 12.sp, AppColor.blackColor),
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Search",
-                          ),
-                        ),
-                      ),
-                      Icon(
-                        Icons.search,
-                        color: AppColor.greenColor,
-                      ),
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.r),
-                      border: Border.all(color: AppColor.greenColor)),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Expanded(
-                  child: Container(
-                    // color: Colors.pink,
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) => horizontalGreenLine(),
-                      itemCount: 10,
-                      itemBuilder: (BuildContext context, int index) {
-                        return notificationItem();
-                      },
-                    ),
-                  ),
-                )
+                customText(text: 'Monday', fontSize: 12.sp, fontColor: AppColor.greenColor),
+                customText(text: 'Today', fontSize: 40.sp, fontColor: AppColor.blackOColor),
+                customText(
+                    text: 'November 11,2021', fontSize: 12.sp, fontColor: AppColor.blackOColor),
               ],
             ),
-          ),
+            SizedBox(height: 30.h),
+            searchTextField(context),
+            SizedBox(height: 30.h),
+            Expanded(
+              child: Container(
+                // color: Colors.pink,
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => horizontalGreenLine(),
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return notificationItem();
+                  },
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

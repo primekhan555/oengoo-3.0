@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/notification.dart';
-import 'package:oengoo/Home/profile.dart';
+import 'package:oengoo/Home/screen_notification.dart';
+import 'package:oengoo/Home/screen_profile.dart';
 import 'package:oengoo/config/decorations.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/text_rich.dart';
@@ -88,7 +88,8 @@ Widget appbar(BuildContext context) {
           padding: const EdgeInsets.only(right: 17, bottom: 3),
           child: InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => NotificationScreen()));
             },
             child: Container(
               height: 35.h,
@@ -173,9 +174,12 @@ Widget challengeContainers(
 
 Widget horizontalGreenLine() {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 30.w),
-    height: 1.h,
-    color: AppColor.greenColor,
+    alignment: Alignment.center,
+    child: Container(
+      height: 1.h,
+      width: 270.w,
+      color: AppColor.greenColor,
+    ),
   );
 }
 

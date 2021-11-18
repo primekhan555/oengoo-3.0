@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/notification.dart';
-import 'package:oengoo/Home/profile.dart';
+import 'package:oengoo/Home/screen_notification.dart';
+import 'package:oengoo/Home/screen_profile.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
@@ -39,7 +39,8 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             circleButton(
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications()));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => NotificationScreen()));
                 },
                 state: 1,
                 iconData: Icons.notifications),

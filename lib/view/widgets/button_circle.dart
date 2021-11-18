@@ -4,7 +4,7 @@ import 'package:oengoo/config/colors.dart';
 
 circleButton({
   Color color = AppColor.greenColor,
-  required VoidCallback onPress,
+  VoidCallback? onPress,
   IconData iconData = Icons.arrow_forward_ios,
   iconColor = AppColor.whiteColor,
   int state = 0,

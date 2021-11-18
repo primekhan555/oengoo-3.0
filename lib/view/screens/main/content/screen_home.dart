@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/chatRoom.dart';
+import 'package:oengoo/Home/screen_chat.dart';
 import 'package:oengoo/Home/sendChallenge.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';

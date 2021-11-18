@@ -29,7 +29,7 @@ class DailyStepsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 30.h),
-            searchTextField(),
+            searchTextField(context),
             SizedBox(height: 30.h),
             ListView.builder(
                 itemCount: 8,
@@ -97,31 +97,27 @@ class DailyStepsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(width: 20.w),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        customText(text: steps, fontSize: 20.sp),
-                        customText(text: 'Steps', fontSize: 10.sp, fontColor: AppColor.greenColor),
-                      ],
-                    ),
-                    Image.asset(
-                      ImagePaths.multiStepsImage,
-                      width: 230.w,
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    customText(text: '5K', fontSize: 20.sp),
+                    customText(text: steps, fontSize: 20.sp),
                     customText(text: 'Steps', fontSize: 10.sp, fontColor: AppColor.greenColor),
                   ],
                 ),
+                Image.asset(
+                  ImagePaths.multiStepsImage,
+                  width: 230.w,
+                ),
+              ],
+            ),
+            const Spacer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                customText(text: '5K', fontSize: 20.sp),
+                customText(text: 'Steps', fontSize: 10.sp, fontColor: AppColor.greenColor),
               ],
             ),
           ],
