@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/appbar_custom.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/search_textfield.dart';
@@ -35,7 +37,7 @@ class NotificationScreen extends StatelessWidget {
             ),
             SizedBox(height: 30.h),
             searchTextField(context),
-            SizedBox(height: 30.h),
+            SizedBox(height: 10.h),
             Expanded(
               child: Container(
                 // color: Colors.pink,
@@ -43,7 +45,11 @@ class NotificationScreen extends StatelessWidget {
                   separatorBuilder: (context, index) => horizontalGreenLine(),
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return notificationItem();
+                    return notificationItem(
+                      'Saddam sent you steps challenge. Start your streak now',
+                      onReject: () {},
+                      onAccept: () {},
+                    );
                   },
                 ),
               ),
@@ -54,108 +60,76 @@ class NotificationScreen extends StatelessWidget {
     );
   }
 
-  Widget notificationItem() {
+  Widget notificationItem(String text, {required onReject, required onAccept}) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 5.h),
       height: 70.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.r),
-      ),
       // alignment: Alignment.center,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          profileIcon(),
+          Container(
+            height: 53.h,
+            width: 53.h,
+            decoration: const BoxDecoration(
+              color: AppColor.lightGreen,
+              shape: BoxShape.circle,
+            ),
+            child: Image.asset(
+              ImagePaths.maleImage,
+            ),
+          ),
           Expanded(
-            flex: 3,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
-              // color: Colors.yellow,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Saddam sent you steps challenge",
-                    maxLines: 2,
-                    style: textStyle("nunito", 12.sp, AppColor.blackColor),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Start your streak now",
-                        style: textStyle("nunito", 11.sp, AppColor.blackColor),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          crossButton(),
-                          SizedBox(
-                            width: 8.w,
-                          ),
-                          checkButton(),
-                        ],
-                      )
-                    ],
+                  customText(
+                    text: text,
+                    fontSize: 14.sp,
                   )
                 ],
               ),
             ),
           ),
-          Expanded(
-            child: Container(
-              // color: Colors.green,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Yesterday",
-                    style: textStyle("nunito", 12.sp, AppColor.blackColor),
-                  ),
-                  Text(
-                    "09:39 pm",
-                    style: textStyle("nunito", 12.sp, AppColor.blackColor),
-                  ),
-                ],
-              ),
-            ),
+          Row(
+            children: [
+              circleActionButton(onTap: onReject, iconData: Icons.close, color: Colors.red),
+              SizedBox(width: 8.w),
+              circleActionButton(
+                  onTap: onAccept, iconData: Icons.check, color: AppColor.greenColor),
+            ],
+          ),
+          SizedBox(width: 8.w),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              customText(text: 'Yesterday', fontSize: 11.sp),
+              customText(text: '09:39 pm', fontSize: 11.sp),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget checkButton() {
-    return CircleAvatar(
-      radius: 10.r,
-      backgroundColor: Colors.red,
-      child: Icon(Icons.close, color: Colors.white, size: 13.r),
-    );
-  }
-
-  Widget crossButton() {
-    return CircleAvatar(
-      radius: 10.r,
-      backgroundColor: AppColor.greenColor,
-      child: Icon(Icons.check, color: Colors.white, size: 13.r),
-    );
-  }
-
-  Widget profileIcon() {
-    return Expanded(
-      child: FittedBox(
-        child: Container(
-          // color: Colors.red,
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/male.png"),
-          ),
+  circleActionButton({required onTap, required iconData, required color}) {
+    return SizedBox(
+      height: 30.h,
+      width: 30.h,
+      child: RawMaterialButton(
+        onPressed: onTap,
+        shape: const CircleBorder(),
+        fillColor: color,
+        child: Icon(
+          iconData,
+          color: CupertinoColors.white,
+          size: 20.h,
         ),
       ),
     );
