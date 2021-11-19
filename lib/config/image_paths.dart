@@ -24,4 +24,6 @@ class ImagePaths {
   static const bronzeImage = "assets/images/bronze.png";
   static const multiStepsImage = "assets/images/multiplesteps.png";
   static const fireImage = "assets/images/fireboot.png";
+  static const sendChallengeImage = "assets/images/sendchallenge.png";
+  static const flareSmallImage = "assets/images/sendchallenge.png";
 }

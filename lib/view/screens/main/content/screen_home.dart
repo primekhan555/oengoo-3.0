@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:oengoo/Home/screen_other_profile.dart';
+import 'package:oengoo/Home/screen_send_challenge.dart';
+import 'package:oengoo/Home/screen_steps_challenge.dart';
+import 'package:oengoo/Home/screen_weekly_challenges.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/screen_chat.dart';
-import 'package:oengoo/Home/sendChallenge.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 
@@ -55,7 +57,13 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 10.sp,
                     fontColor: AppColor.greenColor),
                 const Spacer(),
-                customText(text: 'See all', fontSize: 14.sp, fontColor: AppColor.blackOColor),
+                InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (ctx) => const WeeklyChallengesScreen()));
+                    },
+                    child: customText(
+                        text: 'See all', fontSize: 14.sp, fontColor: AppColor.blackOColor)),
               ],
             ),
             SizedBox(height: 30.h),
@@ -68,12 +76,20 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  challengeContainers("Streak\nChallenge", ImagePaths.streakChallengeImage,
-                      richText1: 'Add new ',
-                      richText2: 'Friend',
-                      richText3: ' and Challenge a step streak'),
-                  challengeContainers("Steps\nChallenge", ImagePaths.stepsChallengeImage,
-                      richText1: 'Beat your', richText2: '', richText3: '\nOwn steps record'),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context, MaterialPageRoute(builder: (ctx) => const StepsChallengeScreen())),
+                    child: challengeContainers("Streak\nChallenge", ImagePaths.streakChallengeImage,
+                        richText1: 'Add new ',
+                        richText2: 'Friend',
+                        richText3: ' and Challenge a step streak'),
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context, MaterialPageRoute(builder: (ctx) => const SendChallengeScreen())),
+                    child: challengeContainers("Steps\nChallenge", ImagePaths.stepsChallengeImage,
+                        richText1: 'Beat your', richText2: '', richText3: '\nOwn steps record'),
+                  ),
                   challengeContainers("Friends\nChallenge", ImagePaths.friendsChallengeImage,
                       richText1: 'Complete ',
                       richText2: '5K steps',

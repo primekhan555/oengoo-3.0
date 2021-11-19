@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/Home/screen_other_profile.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/config/decorations.dart';
 import 'package:oengoo/config/image_paths.dart';
@@ -36,7 +37,11 @@ class DailyStepsScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return stepsItem(imageUrl: ImagePaths.maleImage, steps: "2897");
+                  return InkWell(
+                    onTap: () => Navigator.push(
+                        context, MaterialPageRoute(builder: (ctx) => const OtherProfileScreen())),
+                    child: stepsItem(imageUrl: ImagePaths.maleImage, steps: "2897"),
+                  );
                 }),
           ],
         ),

@@ -14,15 +14,15 @@ import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/text_rich.dart';
 import 'package:oengoo/view/widgets/widget_flutter_switch.dart';
 
-class UserProfile extends StatefulWidget {
+class OtherProfileScreen extends StatefulWidget {
   final int state;
-  const UserProfile({Key? key, this.state = 0}) : super(key: key);
+  const OtherProfileScreen({Key? key, this.state = 0}) : super(key: key);
 
   @override
-  _UserProfileState createState() => _UserProfileState();
+  _OtherProfileScreenState createState() => _OtherProfileScreenState();
 }
 
-class _UserProfileState extends State<UserProfile> {
+class _OtherProfileScreenState extends State<OtherProfileScreen> {
   bool isPrivateAccount = false;
   int state = 0;
   @override
@@ -35,14 +35,11 @@ class _UserProfileState extends State<UserProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: state == 0
-          ? CustomAppBar(
-              state: 1,
-              onNotificationsClicked: () {
-                Navigator.push(context, MaterialPageRoute(builder: (ctx) => NotificationScreen()));
-              },
-              onSettingClick: () {
-                Navigator.push(context, MaterialPageRoute(builder: (ctx) => SettingScreen()));
-              },
+          ? const CustomAppBar(
+              onNotificationsClicked: null,
+              onSettingClick: null,
+              private: 1,
+              state: 2,
             )
           : const CustomAppBar(onNotificationsClicked: null, onSettingClick: null),
       body: Container(
@@ -50,8 +47,9 @@ class _UserProfileState extends State<UserProfile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              alignment: AlignmentDirectional.topEnd,
+            Sizes.h30,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   height: 102.h,
@@ -63,40 +61,14 @@ class _UserProfileState extends State<UserProfile> {
                   decoration:
                       const BoxDecoration(color: AppColor.greenColor, shape: BoxShape.circle),
                 ),
-                Container(
-                  height: 27.h,
-                  width: 27.w,
-                  alignment: Alignment.center,
-                  child: RawMaterialButton(
-                    child: Icon(state == 0 ? Icons.edit : CupertinoIcons.camera_fill,
-                        size: 17.h, color: Colors.white),
-                    onPressed: () {
-                      setState(() {
-                        state = 1;
-                      });
-                    },
-                  ),
-                  decoration:
-                      const BoxDecoration(color: AppColor.blackColor, shape: BoxShape.circle),
-                )
+                routineContainer(ImagePaths.stepsImage, "Steps", "3890", "per week"),
               ],
             ),
-            Sizes.h20,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                routineContainer(ImagePaths.stepsImage, "Steps", "3890", "per hr"),
-                routineContainer(ImagePaths.caloriesImage, "Calories", "950", "Kcal"),
-                routineContainer(ImagePaths.sleepImage, "Sleep", "8:30", "Hours"),
-                routineContainer(ImagePaths.trainingImage, "Training", "2:00", "Hours"),
-              ],
-            ),
-            Sizes.h10,
             Container(
-              alignment: Alignment.centerRight,
-              child: richText(text1: 'Last Update: ', text2: '30 min ago', text3: ''),
-            ),
-            Sizes.h15,
+                alignment: Alignment.centerLeft,
+                child: customText(
+                    text: state == 0 ? 'Private Account' : 'Public Account', fontSize: 20.sp)),
+            Sizes.h50,
             Column(
               children: [
                 Row(
@@ -120,37 +92,25 @@ class _UserProfileState extends State<UserProfile> {
                   ],
                 ),
                 Sizes.h15,
-                rowItem('Name', 'Wasil Khan', onTap: state == 1 ? () {} : null),
-                rowItem('Location', 'Peshawar, Pakistan', onTap: state == 1 ? () {} : null),
-                rowItem('Gender', 'Male', onTap: state == 1 ? () {} : null),
-                rowItem('D.O.B', '10/04/1996', onTap: state == 1 ? () {} : null),
-                rowItem('Weight', '53.4 kg', onTap: state == 1 ? () {} : null),
-                rowItem('Height', '5ft 6in', onTap: state == 1 ? () {} : null),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Container(height: 1.h, width: 270.w, color: AppColor.greenColor),
+                rowItem('Name', 'Wasil Khan'),
+                rowItem('Location', 'Peshawar, Pakistan'),
+                rowItem('Gender', 'Male'),
+                rowItem('D.O.B', '10/04/1996'),
+                rowItem('Weight', '53.4 kg'),
+                rowItem('Height', '5ft 6in'),
                 Sizes.h15,
-                rowItem('Route', 'Golf Course Track', myState: 1, onTap: state == 1 ? () {} : null),
-                Sizes.h10,
                 Container(height: 1.h, width: 270.w, color: AppColor.greenColor),
-                Sizes.h15,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    customText(text: 'Private Account'),
-                    SizedBox(height: 18.h, width: 36.w),
-                    flutterSwitch(isPrivateAccount, (bool val) {
-                      setState(() {
-                        isPrivateAccount = val;
-                      });
-                    }, state: 1),
-                  ],
-                ),
-                if (state == 1) Sizes.h40,
-                if (state == 1) customButton(onPress: () {}, text: 'Update'),
               ],
             ),
+            if (state == 1)
+              Expanded(
+                  child: Container(
+                alignment: Alignment.center,
+                child: customButton(
+                  onPress: () {},
+                  text: 'Add Mate',
+                ),
+              )),
           ],
         ),
       ),

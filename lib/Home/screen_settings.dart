@@ -5,8 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
+import 'package:oengoo/config/sizes.dart';
 import 'package:oengoo/view/widgets/appbar_custom.dart';
 import 'package:oengoo/view/widgets/bottom_custom.dart';
+import 'package:oengoo/view/widgets/button_negative.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -24,75 +26,64 @@ class SettingScreen extends StatelessWidget {
               padding: EdgeInsets.only(left: 34.w, right: 34.w),
               child: ListView(
                 children: [
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Account Settings', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Connect with Email', fontSize: 16.sp),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   customText(text: 'Connect with Social accounts', fontSize: 16.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   horizontalGreenLine(),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'App Settings', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   rowItem('Unit Formt', 'Imperial'),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   rowItem('Unit Formt', '1000 Steps'),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   rowItem('Remainders', '9:00 AM'),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   horizontalGreenLine(),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Allow Text Messages', fontSize: 20.sp),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   customText(text: 'Everyone', fontSize: 16.sp),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   customText(text: 'Only people I follow', fontSize: 16.sp),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   customText(text: 'Disable all private messages', fontSize: 16.sp),
-                  SizedBox(height: 10.h),
+                  Sizes.h10,
                   customText(
                       text:
                           'If you disable private messages, other users will be unable\nto send you messages.',
                       fontSize: 12.sp,
                       fontColor: AppColor.lightGreyColor),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   horizontalGreenLine(),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Support & Feedback', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Rate Us', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Support & Feedback', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   horizontalGreenLine(),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Privacy Policy', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   customText(text: 'Terms Of Use', fontSize: 20.sp),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   horizontalGreenLine(),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                   Container(
-                      alignment: Alignment.center,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 27.3,
-                          width: 164,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.greenColor, width: 2.h),
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                          child: customText(text: 'Delete Account', fontColor: Colors.green),
-                        ),
-                      )),
-                  SizedBox(height: 20.h),
+                    alignment: Alignment.center,
+                    child: negativeButton('Delete Account', () {}),
+                  ),
+                  Sizes.h20,
                   Container(
                       alignment: Alignment.center,
                       child: customButton(onPress: () {}, text: 'Logout')),
-                  SizedBox(height: 20.h),
+                  Sizes.h20,
                 ],
               )),
           bottomBanner(),
@@ -120,7 +111,7 @@ class SettingScreen extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 10.h),
+        Sizes.h10,
       ],
     );
   }
