@@ -45,7 +45,7 @@ class _StepsChallengeScreenState extends State<StepsChallengeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    customText(text: 'Saddam has send you', fontSize: 15.sp),
+                    customText(text: 'Send Tehsin Ullah daily', fontSize: 15.sp),
                     Sizes.h10,
                     customText(text: 'Steps Challenge', fontSize: 30.sp),
                   ],
