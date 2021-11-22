@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/main.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
 
 import 'fitnesschallenge2.dart';
 
@@ -49,17 +50,14 @@ class _FitnessChallenge1State extends State<FitnessChallenge1> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Fitness Challenge",
-                        style: textStyle("nunito", 35.sp, AppColor.blackColor),
-                      ),
+                      customText(text: 'Fitness Challenge', fontSize: 35.sp),
                       SizedBox(
                         height: 40.h,
                       ),
-                      Text(
-                        "Track your fitness level by our smart Mobile App. Calories, sleep and training.",
-                        style: textStyle("nunito", 15.sp, AppColor.blackColor),
-                      ),
+                      customText(
+                          text:
+                              'Track your fitness level by our smart Mobile App. Calories, sleep and training.',
+                          fontSize: 15.sp),
                       SizedBox(
                         height: 40.h,
                       ),

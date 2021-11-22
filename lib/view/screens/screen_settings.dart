@@ -11,6 +11,7 @@ import 'package:oengoo/view/widgets/appbar_custom.dart';
 import 'package:oengoo/view/widgets/bottom_custom.dart';
 import 'package:oengoo/view/widgets/button_negative.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
+import 'package:oengoo/view/widgets/widget_greenborder.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -139,10 +140,7 @@ class SettingScreen extends StatelessWidget {
             height: 30.h,
             child: Image.asset(ImagePaths.oengooWhite),
           ),
-          Text(
-            "Version: 3.2.1",
-            style: textStyle("nunito", 12.sp, Colors.black45),
-          ),
+          customText(text: 'Version: 3.2.1', fontSize: 12.sp, fontColor: Colors.black45),
         ],
       ),
     );

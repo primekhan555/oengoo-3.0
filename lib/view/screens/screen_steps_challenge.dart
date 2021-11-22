@@ -9,6 +9,7 @@ import 'package:oengoo/view/widgets/appbar_custom.dart';
 import 'package:oengoo/view/widgets/bottom_custom.dart';
 import 'package:oengoo/view/widgets/button_negative.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
+import 'package:oengoo/view/widgets/widget_greenborder.dart';
 import 'package:oengoo/view/widgets/widget_num_picker.dart';
 
 class StepsChallengeScreen extends StatefulWidget {

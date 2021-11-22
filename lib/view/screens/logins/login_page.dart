@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
-import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
 
 import 'otpscreen.dart';
 
@@ -31,10 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 60.h),
-                      Text(
-                        "Welcome to",
-                        style: textStyle("nunito", 30.sp, AppColor.blackColor),
-                      ),
+                      customText(text: 'Welcome to', fontSize: 30.sp),
                       Image.asset(
                         ImagePaths.oengooGreen,
                         height: 67.h,
@@ -134,10 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                                       fit: BoxFit.fill,
                                     ),
                                   ),
-                                  Text(
-                                    "Sign in with Google",
-                                    style: textStyle("nunito", 15.sp, AppColor.blackColor),
-                                  ),
+                                  customText(text: 'Sign in with Google', fontSize: 15.sp),
                                 ],
                               ),
                             ),
@@ -164,10 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                       fit: BoxFit.fill,
                                     ),
                                   ),
-                                  Text(
-                                    "Sign in with Apple",
-                                    style: textStyle("nunito", 15.sp, AppColor.blackColor),
-                                  ),
+                                  customText(text: 'Sign in with Apple', fontSize: 15.sp)
                                 ],
                               ),
                             ),
@@ -177,17 +168,14 @@ class _LoginPageState extends State<LoginPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                "By Signing Up, you agree to our",
-                                style: textStyle("nunito", 11.sp, AppColor.blackColor),
-                              ),
+                              customText(text: 'By Signing Up, you agree to our', fontSize: 11.sp),
                               SizedBox(
                                 width: 5.w,
                               ),
-                              Text(
-                                "Terms of Use",
-                                style: textStyle("nunito", 11.sp, AppColor.greenColor),
-                              ),
+                              customText(
+                                  text: 'Terms of Use',
+                                  fontSize: 11.sp,
+                                  fontColor: AppColor.greenColor),
                             ],
                           ),
                         )

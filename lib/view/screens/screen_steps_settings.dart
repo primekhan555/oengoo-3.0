@@ -6,6 +6,7 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/config/sizes.dart';
 import 'package:oengoo/view/widgets/appbar_custom.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
+import 'package:oengoo/view/widgets/widget_greenborder.dart';
 
 class StepsSettingsScreen extends StatelessWidget {
   const StepsSettingsScreen({Key? key}) : super(key: key);

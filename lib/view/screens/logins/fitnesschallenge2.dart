@@ -4,6 +4,7 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
+import 'package:oengoo/view/widgets/custom_text.dart';
 
 import 'login_page.dart';
 
@@ -38,17 +39,14 @@ class FitnessChallenge2 extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Fitness Challenge",
-                        style: textStyle("nunito", 35.sp, AppColor.blackColor),
-                      ),
+                      customText(text: 'Fitness Challenge', fontSize: 35.sp),
                       SizedBox(
                         height: 40.h,
                       ),
-                      Text(
-                        "Track your fitness level by our smart Mobile App. Calories, sleep and training.",
-                        style: textStyle("nunito", 15.sp, AppColor.blackColor),
-                      ),
+                      customText(
+                          text:
+                              'Track your fitness level by our smart Mobile App. Calories, sleep and training.',
+                          fontSize: 15),
                     ],
                   ),
                   SizedBox(
