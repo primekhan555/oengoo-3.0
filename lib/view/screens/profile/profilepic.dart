@@ -4,11 +4,11 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/profileInfo/getstarted.dart';
-import 'package:oengoo/profileInfo/profilepicUploaded.dart';
 import 'package:oengoo/view/widgets/bottom_sheet_camera.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
+
+import 'getstarted.dart';
 
 class ProfilePicture extends StatefulWidget {
   const ProfilePicture({Key? key}) : super(key: key);

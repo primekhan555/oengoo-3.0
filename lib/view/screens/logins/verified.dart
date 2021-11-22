@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/profileInfo/basic_info.dart';
+import 'package:oengoo/view/screens/profile/basic_info.dart';
 import 'package:oengoo/view/widgets/bottom_custom.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 

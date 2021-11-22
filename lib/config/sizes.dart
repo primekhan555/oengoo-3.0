@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Sizes {
   static final fullHeight = 926.h;
   static final fullWidth = 428.w;
+  static final h4 = SizedBox(height: 4.h);
   static final h10 = SizedBox(height: 10.h);
   static final h15 = SizedBox(height: 15.h);
   static final h20 = SizedBox(height: 20.h);

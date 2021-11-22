@@ -4,9 +4,10 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/logins/fitnesschallenge2.dart';
 import 'package:oengoo/main.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
+
+import 'fitnesschallenge2.dart';
 
 class FitnessChallenge1 extends StatefulWidget {
   const FitnessChallenge1({Key? key}) : super(key: key);

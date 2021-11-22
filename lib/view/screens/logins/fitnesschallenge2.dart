@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/logins/login_page.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
+
+import 'login_page.dart';
 
 class FitnessChallenge2 extends StatelessWidget {
   const FitnessChallenge2({Key? key}) : super(key: key);

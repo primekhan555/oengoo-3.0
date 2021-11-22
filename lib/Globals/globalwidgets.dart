@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/screen_notification.dart';
-import 'package:oengoo/Home/screen_profile.dart';
+import 'package:oengoo/view/screens/screen_notification.dart';
+import 'package:oengoo/view/screens/screen_profile.dart';
 import 'package:oengoo/config/decorations.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/text_rich.dart';

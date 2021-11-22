@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/profileInfo/age.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
+
+import 'age.dart';
 
 class WhatsYourGender extends StatefulWidget {
   const WhatsYourGender({Key? key}) : super(key: key);

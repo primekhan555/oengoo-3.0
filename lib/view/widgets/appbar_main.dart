@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/Home/screen_notification.dart';
-import 'package:oengoo/Home/screen_profile.dart';
+import 'package:oengoo/view/screens/screen_notification.dart';
+import 'package:oengoo/view/screens/screen_profile.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';

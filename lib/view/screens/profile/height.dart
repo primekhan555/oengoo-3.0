@@ -6,7 +6,7 @@ import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:oengoo/profileInfo/weight.dart';
+import 'package:oengoo/view/screens/profile/weight.dart';
 import 'package:oengoo/view/widgets/button_circle.dart';
 import 'package:oengoo/view/widgets/custom_text.dart';
 import 'package:oengoo/view/widgets/widget_flutter_switch.dart';

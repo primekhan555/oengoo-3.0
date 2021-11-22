@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/view/screens/screen_steps_settings.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:oengoo/config/image_paths.dart';
@@ -37,11 +38,14 @@ class SettingScreen extends StatelessWidget {
                   Sizes.h20,
                   customText(text: 'App Settings', fontSize: 20.sp),
                   Sizes.h20,
-                  rowItem('Unit Formt', 'Imperial'),
+                  rowItem('Unit Formt', 'Imperial', onPress: () {}),
                   Sizes.h10,
-                  rowItem('Unit Formt', '1000 Steps'),
+                  rowItem('Unit Formt', '1000 Steps', onPress: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (ctx) => const StepsSettingsScreen()));
+                  }),
                   Sizes.h10,
-                  rowItem('Remainders', '9:00 AM'),
+                  rowItem('Remainders', '9:00 AM', onPress: () {}),
                   Sizes.h20,
                   horizontalGreenLine(),
                   Sizes.h20,
@@ -92,7 +96,7 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  rowItem(String title, String text, {int state = 0}) {
+  rowItem(String title, String text, {int state = 0, required onPress}) {
     return Column(
       children: [
         Row(
@@ -102,11 +106,13 @@ class SettingScreen extends StatelessWidget {
             const Spacer(),
             customText(text: text, fontSize: 12.sp, fontColor: AppColor.lightGreen),
             Container(
-              height: 30.h,
-              width: 30.h,
-              child: IconButton(
-                icon: Icon(Icons.arrow_downward, size: 20.h),
-                onPressed: () {},
+              height: 20.h,
+              width: 20.h,
+              alignment: Alignment.center,
+              child: RawMaterialButton(
+                shape: const CircleBorder(),
+                child: Icon(Icons.arrow_downward, size: 20.h),
+                onPressed: onPress,
               ),
             )
           ],

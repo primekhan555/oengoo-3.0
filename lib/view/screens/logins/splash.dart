@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/config/image_paths.dart';
-import 'package:oengoo/logins/fitness_challenge1.dart';
+
+import 'fitness_challenge1.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

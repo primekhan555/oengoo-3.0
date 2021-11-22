@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:oengoo/Home/screen_other_profile.dart';
-import 'package:oengoo/Home/screen_send_challenge.dart';
-import 'package:oengoo/Home/screen_steps_challenge.dart';
-import 'package:oengoo/Home/screen_weekly_challenges.dart';
+import 'package:oengoo/view/screens/screen_other_profile.dart';
+import 'package:oengoo/view/screens/screen_send_challenge.dart';
+import 'package:oengoo/view/screens/screen_steps_challenge.dart';
+import 'package:oengoo/view/screens/screen_weekly_challenges.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

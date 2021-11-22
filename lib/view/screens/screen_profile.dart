@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oengoo/view/screens/screen_route.dart';
 import 'package:oengoo/config/colors.dart';
 import 'package:oengoo/Globals/globalwidgets.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:oengoo/Home/screen_notification.dart';
-import 'package:oengoo/Home/screen_settings.dart';
+import 'package:oengoo/view/screens/screen_notification.dart';
+import 'package:oengoo/view/screens/screen_settings.dart';
 import 'package:oengoo/config/image_paths.dart';
 import 'package:oengoo/config/sizes.dart';
 import 'package:oengoo/view/widgets/appbar_custom.dart';
@@ -131,7 +132,14 @@ class _UserProfileState extends State<UserProfile> {
                 ),
                 Container(height: 1.h, width: 270.w, color: AppColor.greenColor),
                 Sizes.h15,
-                rowItem('Route', 'Golf Course Track', myState: 1, onTap: state == 1 ? () {} : null),
+                rowItem('Route', 'Golf Course Track',
+                    myState: 1,
+                    onTap: state == 1
+                        ? () {
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (ctx) => const RouteScreen()));
+                          }
+                        : null),
                 Sizes.h10,
                 Container(height: 1.h, width: 270.w, color: AppColor.greenColor),
                 Sizes.h15,

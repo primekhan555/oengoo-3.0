@@ -1,13 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:oengoo/logins/fitness_challenge1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oengoo/logins/otpscreen.dart';
-import 'package:oengoo/logins/splash.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:oengoo/profileInfo/basic_info.dart';
-import 'package:oengoo/profileInfo/gender_selection.dart';
-import 'package:oengoo/profileInfo/profilepic.dart';
 import 'package:oengoo/view/screens/main/screen_main.dart';
 
 double? screenWidth, screenHeight;
