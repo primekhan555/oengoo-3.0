@@ -74,11 +74,14 @@ class _UserHeightState extends State<UserHeight> {
                             ],
                             decoration: InputDecoration(
                               suffixText: "cm",
-                              suffixStyle: TextStyle(fontSize: 30.sp, color: AppColor.greenColor),
+                              suffixStyle: TextStyle(
+                                  fontSize: 30.sp, color: AppColor.greenColor),
                               enabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: AppColor.greenColor, width: 0.8)),
+                                  borderSide: BorderSide(
+                                      color: AppColor.greenColor, width: 0.8)),
                               focusedBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: AppColor.greenColor, width: 0.8)),
+                                  borderSide: BorderSide(
+                                      color: AppColor.greenColor, width: 0.8)),
                             ),
                           ))
                       : SizedBox(
@@ -88,10 +91,11 @@ class _UserHeightState extends State<UserHeight> {
                             children: [
                               Stack(
                                 children: [
-                                  numberPicker(selectedFeet, onChanged: (val) {}, min: 0, max: 11),
+                                  numberPicker(selectedFeet,
+                                      onChanged: (val) {}, min: 0, max: 11),
                                   Positioned(
                                     right: 1,
-                                    bottom: 80.h,
+                                    bottom: 60.h,
                                     child: customText(
                                       text: "ft",
                                       fontColor: AppColor.greenColor,
@@ -105,7 +109,7 @@ class _UserHeightState extends State<UserHeight> {
                                       onChanged: (val) {}, min: 1, max: 12),
                                   Positioned(
                                     right: 1,
-                                    bottom: 80.h,
+                                    bottom: 60.h,
                                     child: customText(
                                       text: "In",
                                       fontColor: AppColor.greenColor,
@@ -147,7 +151,8 @@ class _UserHeightState extends State<UserHeight> {
               child: Container(
             alignment: Alignment.topCenter,
             child: circleButton(onPress: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const UserWeight()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const UserWeight()));
             }),
           )),
         ]));

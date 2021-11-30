@@ -24,7 +24,8 @@ class _StepsChallengeScreenState extends State<StepsChallengeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(onNotificationsClicked: null, onSettingClick: null),
+        appBar: const CustomAppBar(
+            onNotificationsClicked: null, onSettingClick: null),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 34.w),
           child: Column(children: [
@@ -45,7 +46,8 @@ class _StepsChallengeScreenState extends State<StepsChallengeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    customText(text: 'Send Tehsin Ullah daily', fontSize: 15.sp),
+                    customText(
+                        text: 'Send Tehsin Ullah daily', fontSize: 15.sp),
                     Sizes.h10,
                     customText(text: 'Steps Challenge', fontSize: 30.sp),
                   ],
@@ -72,21 +74,29 @@ class _StepsChallengeScreenState extends State<StepsChallengeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       customText(text: 'Oengoo ID', fontSize: 20.sp),
-                      customText(text: '0932823', fontSize: 20.sp, fontColor: AppColor.greenColor),
+                      customText(
+                          text: '0932823',
+                          fontSize: 20.sp,
+                          fontColor: AppColor.greenColor),
                     ],
                   ),
                   Sizes.h20,
                   horizontalGreenLine(),
-                  Sizes.h20,
+                  Sizes.h15,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       customText(text: 'Steps', fontSize: 20.sp),
                       Row(
                         children: [
-                          customText(text: '3000', fontSize: 20.sp, fontColor: AppColor.greenColor),
                           customText(
-                              text: ' Steps', fontSize: 15.sp, fontColor: AppColor.greenColor),
+                              text: '3000',
+                              fontSize: 20.sp,
+                              fontColor: AppColor.greenColor),
+                          customText(
+                              text: ' Steps',
+                              fontSize: 15.sp,
+                              fontColor: AppColor.greenColor),
                         ],
                       ),
                     ],
@@ -110,7 +120,10 @@ class _StepsChallengeScreenState extends State<StepsChallengeScreen> {
                           });
                         }, min: 1, max: 20, state: 1),
                       ),
-                      customText(text: 'Steps', fontColor: AppColor.greenColor, fontSize: 15.sp)
+                      customText(
+                          text: 'Steps',
+                          fontColor: AppColor.greenColor,
+                          fontSize: 15.sp)
                     ],
                   ),
                   Sizes.h10,

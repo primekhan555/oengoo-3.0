@@ -14,7 +14,10 @@ negativeButton(String text, VoidCallback onTap) {
         border: Border.all(color: AppColor.greenColor, width: 2.h),
         borderRadius: BorderRadius.circular(16.r),
       ),
-      child: customText(text: text, fontColor: Colors.green),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: customText(text: text, fontColor: Colors.green),
+      ),
     ),
   );
 }

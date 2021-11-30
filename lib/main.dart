@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:oengoo/view/screens/logins/splash.dart';
 import 'package:oengoo/view/screens/main/screen_main.dart';
 
 double? screenWidth, screenHeight;
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
               title: 'Flutter Demo',
               theme: ThemeData(
                 splashColor: Colors.transparent, //t
-                scaffoldBackgroundColor:
-                    Colors.white, // he highlight effect when clicked is set to transparent
-                highlightColor: Colors.transparent, //the diffusion effect when long
+                scaffoldBackgroundColor: Colors
+                    .white, // he highlight effect when clicked is set to transparent
+                highlightColor:
+                    Colors.transparent, //the diffusion effect when long
                 primarySwatch: Colors.green,
                 pageTransitionsTheme: const PageTransitionsTheme(builders: {
                   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -39,12 +41,12 @@ class MyApp extends StatelessWidget {
   }
 
   startWidget() {
-    return const MainScreen();
+    // return const MainScreen();
     // return ProfilePicture();
     // return const WhatsYourGender();
 
     // return const BasicInformation();
 
-    // return const SplashScreen();
+    return const SplashScreen();
   }
 }

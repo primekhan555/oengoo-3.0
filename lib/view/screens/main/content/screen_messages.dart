@@ -26,8 +26,14 @@ class MessagesScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText(text: 'Monday', fontSize: 12.sp, fontColor: AppColor.greenColor),
-                      customText(text: 'Today', fontSize: 40.sp, fontColor: AppColor.blackOColor),
+                      customText(
+                          text: 'Monday',
+                          fontSize: 12.sp,
+                          fontColor: AppColor.greenColor),
+                      customText(
+                          text: 'Today',
+                          fontSize: 40.sp,
+                          fontColor: AppColor.blackOColor),
                       customText(
                           text: 'November 11,2021',
                           fontSize: 12.sp,
@@ -44,8 +50,12 @@ class MessagesScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () => Navigator.push(
-                              context, MaterialPageRoute(builder: (ctx) => const ChatScreen())),
-                          child: stepsItem(imageUrl: ImagePaths.maleImage, username: "User Name"),
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => const ChatScreen())),
+                          child: stepsItem(
+                              imageUrl: ImagePaths.maleImage,
+                              username: "User Name"),
                         );
                       }),
                 ],
@@ -60,7 +70,8 @@ class MessagesScreen extends StatelessWidget {
               width: 51.h,
               child: FloatingActionButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (ctx) => const ChatScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => const ChatScreen()));
                 },
                 backgroundColor: AppColor.blackOColor,
                 child: const Icon(Icons.edit_rounded),
@@ -87,8 +98,8 @@ class MessagesScreen extends StatelessWidget {
                   child: Container(
                       height: 53.h,
                       width: 53.h,
-                      decoration:
-                          const BoxDecoration(shape: BoxShape.circle, color: AppColor.greenColor),
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: AppColor.greenColor),
                       child: Image.asset(
                         imageUrl,
                         height: 79.h,

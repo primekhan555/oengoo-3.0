@@ -117,7 +117,7 @@ Widget challengeContainers(
   required String richText3,
 }) {
   return Container(
-    height: 199.h,
+    height: 200.h,
     width: 97.w,
     decoration: BoxDecoration(
       color: AppColor.whiteColor,
@@ -134,7 +134,8 @@ Widget challengeContainers(
             decoration: BoxDecoration(
                 color: AppColor.greenColor,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r))),
+                    topLeft: Radius.circular(20.r),
+                    topRight: Radius.circular(20.r))),
             child: customText(
               text: text,
               fontSize: 16.sp,
@@ -147,8 +148,9 @@ Widget challengeContainers(
         Container(
           height: 5.h,
           width: 83.w,
-          decoration:
-              BoxDecoration(borderRadius: BorderRadius.circular(10.r), color: AppColor.greenColor),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              color: AppColor.greenColor),
         ),
         SizedBox(
           height: 6.h,
@@ -194,7 +196,8 @@ Widget challengeContainers(
 //   );
 // }
 
-Widget routineContainer(String imageUrl, String text1, String text2, String text3) {
+Widget routineContainer(
+    String imageUrl, String text1, String text2, String text3) {
   return Container(
     height: 128.h,
     width: 71.w,
@@ -210,11 +213,14 @@ Widget routineContainer(String imageUrl, String text1, String text2, String text
           imageUrl,
           height: 50.h,
         ),
-        customText(text: text1, fontSize: 16.sp, fontColor: AppColor.blackOColor),
+        customText(
+            text: text1, fontSize: 16.sp, fontColor: AppColor.blackOColor),
         SizedBox(height: 8.h),
-        customText(text: text2, fontSize: 15.sp, fontColor: AppColor.greenColor),
+        customText(
+            text: text2, fontSize: 15.sp, fontColor: AppColor.greenColor),
         SizedBox(height: 8.h),
-        customText(text: text3, fontSize: 10.sp, fontColor: AppColor.lightGreyColor),
+        customText(
+            text: text3, fontSize: 10.sp, fontColor: AppColor.lightGreyColor),
       ],
     ),
   );

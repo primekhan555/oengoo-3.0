@@ -8,7 +8,8 @@ import 'package:oengoo/view/screens/screen_search.dart';
 searchTextField(BuildContext context) {
   return InkWell(
     onTap: () {
-      Navigator.push(context, MaterialPageRoute(builder: (ctx) => const SearchScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (ctx) => const SearchScreen()));
     },
     child: Container(
       height: 40.h,
@@ -30,7 +31,7 @@ searchTextField(BuildContext context) {
           hintText: "Search",
           contentPadding: EdgeInsets.only(
             left: 10.w,
-            bottom: 22.h,
+            bottom: 17.h,
           ),
           hintStyle: TextStyle(color: AppColor.lightGreyColor, fontSize: 16.sp),
           enabledBorder: InputBorder.none,

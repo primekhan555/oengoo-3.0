@@ -46,8 +46,10 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.center,
                           child: TextFormField(
                             decoration: InputDecoration(
-                              floatingLabelBehavior: FloatingLabelBehavior.always,
-                              contentPadding: const EdgeInsets.only(left: 30, top: 12, right: 30),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              contentPadding: const EdgeInsets.only(
+                                  left: 30, top: 12, right: 30),
                               hintText: "Enter your number",
                               prefixText: '+92 | ',
                               label: const Text(
@@ -56,10 +58,12 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.r),
-                                  borderSide: const BorderSide(color: AppColor.greenColor)),
+                                  borderSide: const BorderSide(
+                                      color: AppColor.greenColor)),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.r),
-                                  borderSide: const BorderSide(color: AppColor.greenColor)),
+                                  borderSide: const BorderSide(
+                                      color: AppColor.greenColor)),
                             ),
                           ),
                         ),
@@ -70,7 +74,9 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.topCenter,
                           child: circleButton(onPress: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (ctx) => const OtpScreen()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (ctx) => const OtpScreen()));
                           }),
                         ),
                       ),
@@ -81,7 +87,8 @@ class _LoginPageState extends State<LoginPage> {
               Expanded(
                 child: Container(
                     width: double.infinity,
-                    decoration: const BoxDecoration(gradient: AppColor.appThemeColor),
+                    decoration:
+                        const BoxDecoration(gradient: AppColor.appThemeColor),
                     child: Column(
                       children: [
                         Expanded(
@@ -114,24 +121,30 @@ class _LoginPageState extends State<LoginPage> {
                           child: Container(
                             alignment: Alignment.center,
                             child: Container(
-                              height: 48.h,
+                              height: 39.5.h,
                               width: 317.83.w,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
-                                  border: Border.all(color: AppColor.blackColor, width: 1.w)),
+                                  border: Border.all(
+                                      color: AppColor.blackColor, width: 1.w)),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.transparent,
-                                    child: Image.asset(
-                                      ImagePaths.googleImage,
-                                      height: 50.h,
-                                      fit: BoxFit.fill,
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 15),
+                                    child: CircleAvatar(
+                                      radius: 20,
+                                      backgroundColor: Colors.transparent,
+                                      child: Image.asset(
+                                        ImagePaths.googleImage,
+                                        height: 60.h,
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
-                                  customText(text: 'Sign in with Google', fontSize: 15.sp),
+                                  customText(
+                                      text: 'Sign in with Google',
+                                      fontSize: 17.sp),
                                 ],
                               ),
                             ),
@@ -141,24 +154,30 @@ class _LoginPageState extends State<LoginPage> {
                           child: Container(
                             alignment: Alignment.topCenter,
                             child: Container(
-                              height: 48.h,
+                              height: 39.5.h,
                               width: 317.83.w,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
-                                  border: Border.all(color: AppColor.blackColor, width: 1.w)),
+                                  border: Border.all(
+                                      color: AppColor.blackColor, width: 1.w)),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CircleAvatar(
-                                    radius: 20,
-                                    backgroundColor: Colors.transparent,
-                                    child: Image.asset(
-                                      ImagePaths.appleImage,
-                                      height: 50.h,
-                                      fit: BoxFit.fill,
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 15),
+                                    child: CircleAvatar(
+                                      radius: 20,
+                                      backgroundColor: Colors.transparent,
+                                      child: Image.asset(
+                                        ImagePaths.appleImage,
+                                        height: 50.h,
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
-                                  customText(text: 'Sign in with Apple', fontSize: 15.sp)
+                                  customText(
+                                      text: 'Sign in with Apple',
+                                      fontSize: 17.sp)
                                 ],
                               ),
                             ),
@@ -168,7 +187,9 @@ class _LoginPageState extends State<LoginPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              customText(text: 'By Signing Up, you agree to our', fontSize: 11.sp),
+                              customText(
+                                  text: 'By Signing Up, you agree to our',
+                                  fontSize: 11.sp),
                               SizedBox(
                                 width: 5.w,
                               ),

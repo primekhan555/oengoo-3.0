@@ -1,5 +1,3 @@
-import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
-import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:oengoo/view/screens/main/content/screen_champion.dart';
@@ -10,6 +8,7 @@ import 'package:oengoo/view/screens/main/content/screen_messages.dart';
 import 'package:oengoo/view/widgets/appbar_main.dart';
 
 import 'content/screen_daily_steps.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -31,24 +30,42 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MainAppBar(),
-      bottomNavigationBar: CircleBottomNavigationBar(
-        initialSelection: pageIndex,
-        circleColor: AppColor.blackOColor,
-        barBackgroundColor: AppColor.greenColor,
-        activeIconColor: AppColor.whiteColor,
-        inactiveIconColor: AppColor.whiteColor,
-        barHeight: 50,
-        circleSize: 50,
-        arcWidth: 50,
-        circleOutline: -40,
-        tabs: [
-          TabData(icon: Icons.home),
-          TabData(icon: Icons.whatshot_sharp),
-          TabData(icon: Icons.groups),
-          TabData(icon: CupertinoIcons.bubble_left_bubble_right_fill),
+      bottomNavigationBar: ConvexAppBar(
+        backgroundColor: AppColor.greenColor,
+        activeColor: AppColor.blackColor,
+        color: AppColor.whiteColor,
+        style: TabStyle.reactCircle,
+        items: const [
+          TabItem(icon: Icons.home),
+          TabItem(icon: Icons.whatshot_sharp),
+          TabItem(icon: Icons.groups),
+          TabItem(icon: CupertinoIcons.bubble_left_bubble_right_fill),
         ],
-        onTabChangedListener: (index) => setState(() => pageIndex = index),
+        initialActiveIndex: pageIndex,
+        onTap: (index) {
+          setState(() {
+            pageIndex = index;
+          });
+        },
       ),
+      // CircleBottomNavigationBar(
+      //   initialSelection: pageIndex,
+      //   circleColor: AppColor.blackOColor,
+      //   barBackgroundColor: AppColor.greenColor,
+      //   activeIconColor: AppColor.whiteColor,
+      //   inactiveIconColor: AppColor.whiteColor,
+      //   barHeight: 50,
+      //   circleSize: 50,
+      //   arcWidth: 50,
+      //   circleOutline: -40,
+      //   tabs: [
+      //     TabData(icon: Icons.home),
+      //     TabData(icon: Icons.whatshot_sharp),
+      //     TabData(icon: Icons.groups),
+      //     TabData(icon: CupertinoIcons.bubble_left_bubble_right_fill),
+      //   ],
+      //   onTabChangedListener: (index) => setState(() => pageIndex = index),
+      // ),
       // bottomNavigationBar: SizedBox(
       //   height: 75.h,
       //   child: CurvedNavigationBar(
