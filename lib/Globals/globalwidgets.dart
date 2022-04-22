@@ -117,7 +117,7 @@ Widget challengeContainers(
   required String richText3,
 }) {
   return Container(
-    height: 200.h,
+    height: 205.h,
     width: 97.w,
     decoration: BoxDecoration(
       color: AppColor.whiteColor,

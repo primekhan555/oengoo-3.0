@@ -7,7 +7,7 @@ import 'package:oengoo/view/screens/main/screen_main.dart';
 
 double? screenWidth, screenHeight;
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
   // runApp(DevicePreview(
   //   enabled: !kReleaseMode,
   //   builder: (context) => MyApp(), // Wrap your app

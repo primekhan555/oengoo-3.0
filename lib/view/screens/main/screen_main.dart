@@ -35,6 +35,8 @@ class _MainScreenState extends State<MainScreen> {
         activeColor: AppColor.blackColor,
         color: AppColor.whiteColor,
         style: TabStyle.reactCircle,
+        top: -20,
+        curveSize: 100,
         items: const [
           TabItem(icon: Icons.home),
           TabItem(icon: Icons.whatshot_sharp),
